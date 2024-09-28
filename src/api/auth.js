@@ -4,7 +4,7 @@ import { server } from "@/constans/constants";
 const login = async (userData) => {
   try {
     const { data } = await axios.post(`${server}auth/login`, userData, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { "Access-Control-Allow-Origin": "https://user-test-back.onrender.com/" },
     });
 
     return data;
@@ -17,7 +17,7 @@ const login = async (userData) => {
 const registerUser = async (userData) => {
   try {
     const { data } = await axios.post(`${server}auth/register`, userData, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { "Access-Control-Allow-Origin": "https://user-test-back.onrender.com/" },
     });
 
     return data;

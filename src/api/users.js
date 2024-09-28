@@ -6,7 +6,7 @@ const getUsers = async () => {
   try {
     const id = getCredentials().id
     const { data } = await axios.get(`${server}users/?userid=${id}`, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { "Access-Control-Allow-Origin": "https://user-test-back.onrender.com/" },
     });
 
     return data.users;
@@ -20,7 +20,7 @@ const blockUser = async (usersId) => {
     const id = getCredentials().id
     const postData = {usersId: usersId}
     await axios.post(`${server}users/block/?userid=${id}`, postData, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { "Access-Control-Allow-Origin": "https://user-test-back.onrender.com/" },
     });
 
     return "Users blocked";
@@ -35,7 +35,7 @@ const unBlockUser = async (usersId) => {
     const id = getCredentials().id
     const postData = {usersId: usersId}
     await axios.post(`${server}users/unblock/?userid=${id}`, postData, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { "Access-Control-Allow-Origin": "https://user-test-back.onrender.com/" },
     });
 
     return "Users unblocked";
@@ -50,7 +50,7 @@ const deleteUser = async (usersId) => {
     const id = getCredentials().id
     const postData = {usersId: usersId}
     await axios.post(`${server}users/delete/?userid=${id}`, postData, {
-      headers: { "Access-Control-Allow-Origin": "*" },
+      headers: { "Access-Control-Allow-Origin": "https://user-test-back.onrender.com/" },
     });
 
     return "Users deleted";
