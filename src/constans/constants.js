@@ -1,3 +1,3 @@
-const server = "http://localhost:3000/api/"
+const server = "https://user-test-back.onrender.com/api/"
 
 export {server}
