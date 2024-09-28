@@ -16,10 +16,11 @@ export default function Actions(props) {
             return
         }
         if (usersId == "all") {
-            blockUser("all")
+            deleteUser("all")
+            setIsLoading(true)
             return
         }
-        const res = await deleteUser(Array.from(usersId))
+        const res = usersId == "all"?await deleteUser("all"): await deleteUser(Array.from(usersId))
         if (res.error) {
             if(res.status == 401){
                 router.push("/login")
@@ -37,7 +38,7 @@ export default function Actions(props) {
             blockUser("all")
             return
         }
-        const res = await blockUser(Array.from(usersId))
+        const res = usersId == "all"?await blockUser("all"): await blockUser(Array.from(usersId))
         if (res.error) {
             if(res.status == 401){
                 router.push("/login")
@@ -52,11 +53,8 @@ export default function Actions(props) {
             alert("No users selected")
             return
         }
-        if (usersId == "all") {
-            blockUser("all")
-            return
-        }
-        const res = await unBlockUser(Array.from(usersId))
+        const res = usersId == "all"?await unBlockUser("all"): await unBlockUser(Array.from(usersId))
+
         if (res.error) {
             if(res.status == 401){
                 router.push("/login")
