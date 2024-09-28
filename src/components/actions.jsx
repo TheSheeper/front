@@ -16,7 +16,7 @@ export default function Actions(props) {
             return
         }
         if (usersId == "all") {
-            alert("All selected")
+            blockUser("all")
             return
         }
         const res = await deleteUser(Array.from(usersId))
@@ -34,7 +34,7 @@ export default function Actions(props) {
             return
         }
         if (usersId == "all") {
-            alert("All selected")
+            blockUser("all")
             return
         }
         const res = await blockUser(Array.from(usersId))
@@ -53,7 +53,7 @@ export default function Actions(props) {
             return
         }
         if (usersId == "all") {
-            alert("All selected")
+            blockUser("all")
             return
         }
         const res = await unBlockUser(Array.from(usersId))
