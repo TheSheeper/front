@@ -15,11 +15,6 @@ export default function Actions(props) {
             alert("No users selected")
             return
         }
-        if (usersId == "all") {
-            deleteUser("all")
-            setIsLoading(true)
-            return
-        }
         const res = usersId == "all"?await deleteUser("all"): await deleteUser(Array.from(usersId))
         if (res.error) {
             if(res.status == 401){
@@ -32,10 +27,6 @@ export default function Actions(props) {
     const onBlock = async () => {
         if (!usersId) {
             alert("No users selected")
-            return
-        }
-        if (usersId == "all") {
-            blockUser("all")
             return
         }
         const res = usersId == "all"?await blockUser("all"): await blockUser(Array.from(usersId))
